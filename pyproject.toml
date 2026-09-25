@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gaitreader"
+version = "0.1.0"
+description = "Healthy-pretrained knee kinematics representation learning with integrated five-fold evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["torch", "numpy", "pandas", "scipy", "scikit-learn", "matplotlib"]
+
+[project.optional-dependencies]
+comparisons = ["einops>=0.6", "reformer-pytorch==1.4.4", "psutil"]
+
+[tool.setuptools.packages.find]
+include = ["gaitreader*"]

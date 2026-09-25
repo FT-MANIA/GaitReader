@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+/results/
+/result/
+/paper/
+/tools/
+/data/
+/checkpoints/
+/.benchmark_sources/
+*.pt
+*.checkpoint
+*.tmp
+.DS_Store

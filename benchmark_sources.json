@@ -1,0 +1,42 @@
+{
+  "Time-Series-Library": {
+    "url": "https://github.com/thuml/Time-Series-Library.git",
+    "commit": "4e938a1767106324dd753b2a44832bf870a0252e",
+    "entry": "models/TimesNet.py"
+  },
+  "PatchTST": {
+    "url": "https://github.com/yuqinie98/PatchTST.git",
+    "commit": "204c21efe0b39603ad6e2ca640ef5896646ab1a9",
+    "entry": "PatchTST_self_supervised/src/models/patchTST.py"
+  },
+  "iTransformer": {
+    "url": "https://github.com/thuml/iTransformer.git",
+    "commit": "c2426e68ca13f74aaec08045c5c724d8ad328124",
+    "entry": "model/iTransformer.py"
+  },
+  "TS-TCC": {
+    "url": "https://github.com/emadeldeen24/TS-TCC.git",
+    "commit": "15bdfd6eced6aeb6c638839828effe1b4b2ea391",
+    "entry": "models/TC.py"
+  },
+  "TS2Vec": {
+    "url": "https://github.com/zhihanyue/ts2vec.git",
+    "commit": "b0088e14a99706c05451316dc6db8d3da9351163",
+    "entry": "ts2vec.py"
+  },
+  "T-Rep": {
+    "url": "https://github.com/let-it-care/t-rep.git",
+    "commit": "d624998e30b34f365649b13c1cade7c54c41687f",
+    "entry": "trep.py"
+  },
+  "VQShape": {
+    "url": "https://github.com/YunshiWen/VQShape.git",
+    "commit": "24fc507461e17b4b8485d5f097aa91eaef98ae67",
+    "entry": "vqshape/model.py"
+  },
+  "HeartLang": {
+    "url": "https://github.com/PKUDigitalHealth/HeartLang.git",
+    "commit": "a08afd8117e813fee212a1ac283db4a7140a4669",
+    "entry": "modeling_pretrain.py"
+  }
+}
