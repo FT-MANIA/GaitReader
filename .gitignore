@@ -10,7 +10,7 @@ dist/
 /tools/
 /data/
 /checkpoints/
-/.benchmark_sources/
+/.benchmark_sources/*/.git/
 *.pt
 *.checkpoint
 *.tmp

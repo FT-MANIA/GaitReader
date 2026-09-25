@@ -1,9 +1,15 @@
 # Third-party model sources
 
 The comparison adapters load modules from pinned upstream repositories listed in
-`benchmark_sources.json`. The upstream source code is not bundled. Running
-`python run.py --fetch-sources` explicitly downloads checkouts into the ignored
-`.benchmark_sources/` directory. Existing checkouts are verified, not reset.
+`benchmark_sources.json`. Source snapshots are bundled in `.benchmark_sources/`,
+with upstream licenses and attribution retained. Nested Git histories, datasets,
+weights, generated outputs, binary extensions, notebooks, and image assets are
+excluded. Included source files are unmodified copies of the pinned checkouts.
+`sources.lock.json` records the upstream revisions and SHA-256 hashes of included
+UTF-8 text files with normalized line endings. The loader verifies these snapshots
+without requiring nested Git repositories. Existing local Git checkouts continue
+to use revision verification. `python run.py --fetch-sources` is optional: it
+fetches missing repositories and verifies existing sources without resetting them.
 
 | Adapter | Upstream |
 | --- | --- |
@@ -16,7 +22,7 @@ The comparison adapters load modules from pinned upstream repositories listed in
 | VQShape | https://github.com/YunshiWen/VQShape |
 | HeartLang | https://github.com/PKUDigitalHealth/HeartLang |
 
-Each upstream project's own license and attribution requirements apply. Fetching
-a repository is not a license grant. Before redistributing upstream code or
-weights, review the LICENSE/NOTICE at the pinned revision and retain required
-notices. No license is inferred for this project or for clinical datasets.
+Each upstream project's own license and attribution requirements apply. PatchTST
+uses Apache-2.0; the other listed repositories include MIT licenses. Nested
+third-party notices and licenses are retained where present and continue to apply.
+No license is inferred for GaitReader itself or for clinical datasets.

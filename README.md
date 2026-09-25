@@ -21,6 +21,7 @@ gaitreader/
   evaluation.py              # Metrics and summaries
   utils.py                   # Checkpoints, seeds, and shared utilities
 benchmark_sources.json       # Pinned upstream comparison repositories
+.benchmark_sources/          # Bundled comparison source snapshots and licenses
 THIRD_PARTY_NOTICES.md        # Third-party attribution
 ```
 
@@ -100,10 +101,9 @@ python run.py --suite mask_ratio --seed 42
 
 ### Comparison models
 
-Download the pinned upstream sources once, then run the comparison suite:
+Pinned comparison source snapshots are bundled; no separate download is needed:
 
 ```powershell
-python run.py --fetch-sources
 python run.py --suite comparison --seed 42
 ```
 

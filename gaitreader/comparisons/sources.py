@@ -1,5 +1,6 @@
 """Load original modules without collisions between their models/layers/utils packages."""
 import importlib
+import hashlib
 import json
 import subprocess
 import sys
@@ -21,7 +22,15 @@ def fetch_sources():
 
 def verify_source(name):
     path = ROOT / ".benchmark_sources" / name
-    revision = subprocess.check_output(["git", "-C", str(path), "rev-parse", "HEAD"], text=True).strip()
+    if (path / ".git").exists():
+        revision = subprocess.check_output(["git", "-C", str(path), "rev-parse", "HEAD"], text=True).strip()
+    else:
+        snapshot = json.loads((ROOT / ".benchmark_sources" / "sources.lock.json").read_text(encoding="utf-8"))[name]
+        revision = snapshot["commit"]
+        for relative, expected in snapshot["files"].items():
+            content = (path / relative).read_text(encoding="utf-8-sig").encode("utf-8")
+            if hashlib.sha256(content).hexdigest() != expected:
+                raise ValueError(f"{name}: bundled source differs from the pinned snapshot: {relative}")
     if revision != MANIFEST[name]["commit"]:
         raise ValueError(f"{name}: expected {MANIFEST[name]['commit']}, found {revision}")
     return path
